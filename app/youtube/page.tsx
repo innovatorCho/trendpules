@@ -6,7 +6,7 @@ import Sidebar from '@/components/Sidebar';
 import MainContent from '@/components/MainContent';
 import { Video } from '@/types/YoutubeContents';
 
-export default function Home() {
+export default function YouTube() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
 
