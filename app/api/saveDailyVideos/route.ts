@@ -37,7 +37,8 @@ export async function POST(request: Request) {
   }
 
   try {
-    await redis.set(cacheKey, { regulars }, { ex: 24 * 60 * 60 });
+    // 배열로 직접 저장
+    await redis.set(cacheKey, JSON.stringify(regulars), { ex: 24 * 60 * 60 });
     await redis.lpush(weekKey, JSON.stringify(regulars));
     await redis.lpush(monthKey, JSON.stringify(regulars));
     await redis.lpush(yearKey, JSON.stringify(regulars));
@@ -49,6 +50,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ message: '저장 성공', success: true }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ message: '저장 실패', success: false, error: (error as Error).message }, { status: 500 });
+    return NextResponse.json(
+      { message: '저장 실패', success: false, error: (error as Error).message },
+      { status: 500 }
+    );
   }
 }

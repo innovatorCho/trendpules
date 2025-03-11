@@ -49,7 +49,7 @@ export default function RegularSection({ regularVideos, setSelectedVideo, select
                 <span className="text-lg sm:text-xl font-bold text-teal-500 mr-2 sm:mr-4 w-8 sm:w-10 flex-shrink-0">
                   {index + 1}
                 </span>
-                <Image
+                <img
                   src={video.thumbnail}
                   alt={video.title}
                   className="w-32 sm:w-40 lg:w-48 h-18 sm:h-24 lg:h-28 object-cover rounded-md mr-2 sm:mr-4 flex-shrink-0"

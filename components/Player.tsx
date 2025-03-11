@@ -47,7 +47,7 @@ export default function Player({ selectedVideo, onClose }: PlayerProps) {
               />
             ) : (
               <div className="relative w-full h-full">
-                <Image
+                <img
                   src={selectedVideo.thumbnail}
                   alt={selectedVideo.title}
                   className="w-full h-full object-cover rounded-md"
